@@ -21,10 +21,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAE028EVfQBXcXexwXFupAX7Atx_7LyjEw"
+        }
+      },
+      "package": "com.anggaprytn.authapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0bc0648c-80fc-4e7b-9668-1173bd900e86"
+      }
+    },
+    "owner": "anggaprytn"
   }
 }
