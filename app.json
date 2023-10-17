@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -32,11 +30,11 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "anggaprytn",
     "extra": {
       "eas": {
         "projectId": "0bc0648c-80fc-4e7b-9668-1173bd900e86"
       }
-    },
-    "owner": "anggaprytn"
+    }
   }
 }

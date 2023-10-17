@@ -4,11 +4,9 @@ import { View, Image } from 'react-native';
 import { Button, TextInput, Dialog, Portal, Divider } from 'react-native-paper';
 import { styles } from './styles';
 import { useLoginScreen } from './_hooks';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { Text, Pressable } from '@/components';
 import { defaultColors } from '@/themes';
 import { IconGoogle } from '@/assets/icons';
-import { hexToRGBA } from '@/utils/helpers';
 
 const Login = () => {
   const {
@@ -56,13 +54,11 @@ const Login = () => {
 
   const renderButton = useMemo(() => {
     return (
-      <>
-        <Pressable onPress={handleLogin} style={styles.btn}>
-          <Text type={'medium'} color={defaultColors.white} size={18}>
-            Login
-          </Text>
-        </Pressable>
-      </>
+      <Pressable onPress={handleLogin} style={styles.btn}>
+        <Text type={'medium'} color={defaultColors.white} size={18}>
+          Login
+        </Text>
+      </Pressable>
     );
   }, [handleLogin]);
 
@@ -90,6 +86,34 @@ const Login = () => {
     );
   }, [isPasswordVisible, setIsPasswordVisible, setPassword, setUser]);
 
+  const renderBtnGoogle = useMemo(() => {
+    return (
+      <Pressable onPress={handleLogin} style={styles.btnGoogle}>
+        <View style={styles.containerIcon}>
+          <IconGoogle height={26} />
+        </View>
+        <Text type={'medium'} color={defaultColors.text} size={18}>
+          Lanjutkan dengan Google
+        </Text>
+      </Pressable>
+    );
+  }, [handleLogin]);
+
+  const renderDivider = useMemo(() => {
+    return (
+      <View style={styles.centerr}>
+        <Divider style={styles.divider} />
+        <Text
+          type={'regular'}
+          color={defaultColors.grayText}
+          size={18}
+          style={styles.orText}>
+          atau masuk dengan
+        </Text>
+      </View>
+    );
+  }, []);
+
   return (
     <>
       <View style={styles.container}>
@@ -98,49 +122,8 @@ const Login = () => {
           {renderHeader}
           {renderInput}
           {renderButton}
-          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Divider
-              style={{ width: wp(100) - 32, marginVertical: 32, height: 1 }}
-            />
-            <Text
-              type={'regular'}
-              color={defaultColors.grayText}
-              size={18}
-              style={{
-                position: 'absolute',
-                backgroundColor: 'white',
-                paddingHorizontal: 8,
-              }}>
-              atau masuk dengan
-            </Text>
-          </View>
-          <Pressable
-            onPress={handleLogin}
-            style={{
-              width: wp(100) - 32,
-              height: 50,
-              justifyContent: 'center',
-              backgroundColor: 'white',
-              borderWidth: 1,
-              borderColor: hexToRGBA(defaultColors.grayText, 0.4),
-              borderRadius: 99,
-              alignItems: 'center',
-              flexDirection: 'row',
-            }}>
-            <View
-              style={{
-                height: 45,
-                width: 45,
-
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <IconGoogle height={26} />
-            </View>
-            <Text type={'medium'} color={defaultColors.text} size={18}>
-              Lanjutkan dengan Google
-            </Text>
-          </Pressable>
+          {renderDivider}
+          {renderBtnGoogle}
         </View>
       </View>
       {renderDialog}

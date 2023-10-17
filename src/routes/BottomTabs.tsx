@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '@/screens/Map';
+import Map from '@/screens/Map';
 import Profile from '@/screens/Profile';
 import IconFeather from 'react-native-vector-icons/Feather';
 import { Text } from 'react-native-paper';
@@ -20,13 +20,13 @@ const BottomTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Catalog"
-        component={Home}
+        name="Map"
+        component={Map}
         options={{
           tabBarShowLabel: false,
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
-            <TabBarIcon color={color} name="home" label="Catalog" />
+            <TabBarIcon color={color} name="map" label="Map" />
           ),
         }}
       />

@@ -2,6 +2,7 @@ import { defaultColors } from '@/themes';
 import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { hexToRGBA } from '@/utils/helpers';
 
 const statusBarHeight = getStatusBarHeight();
 
@@ -42,4 +43,28 @@ export const styles = StyleSheet.create({
   },
   center: { alignItems: 'center' },
   white: { color: 'white' },
+  btnGoogle: {
+    width: wp(100) - 32,
+    height: 50,
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: hexToRGBA(defaultColors.grayText, 0.4),
+    borderRadius: 99,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  containerIcon: {
+    height: 45,
+    width: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  centerr: { justifyContent: 'center', alignItems: 'center' },
+  divider: { width: wp(100) - 32, marginVertical: 32, height: 1 },
+  orText: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    paddingHorizontal: 8,
+  },
 });
