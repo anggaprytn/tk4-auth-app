@@ -44,7 +44,7 @@ const Home = () => {
           color={defaultColors.text}
           align={'center'}
           style={styles.mt8}>
-          Angga Priyatna
+          Pengguna
         </Text>
       </>
     );

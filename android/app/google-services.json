@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "966450485349",
+    "project_id": "koperasi-digital-392306",
+    "storage_bucket": "koperasi-digital-392306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966450485349:android:e4a7f1c5c89799d7abce8c",
+        "android_client_info": {
+          "package_name": "com.anggaprytn.authapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966450485349-o6cbkiq9mstrp6h364eemgopq2j656sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anggaprytn.authapp",
+            "certificate_hash": "24e8d6063befc5cce988b07fb4f77331f4d75a31"
+          }
+        },
+        {
+          "client_id": "966450485349-d0hsgebev01gp91acp17lpi957s42dh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEBx7KC-T5xCfkhy37FsUvmcC-hikfscw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966450485349-d0hsgebev01gp91acp17lpi957s42dh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

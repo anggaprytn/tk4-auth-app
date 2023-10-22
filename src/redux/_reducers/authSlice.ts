@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface AuthState {
   isSignedIn: boolean;
+  data: any;
 }
 
 const initialState: AuthState = {
   isSignedIn: false,
+  data: null,
 };
 
 const authSlice = createSlice({
@@ -17,6 +19,7 @@ const authSlice = createSlice({
     },
     clearTokens: state => {
       state.isSignedIn = false;
+      state.data = null;
     },
   },
 });
