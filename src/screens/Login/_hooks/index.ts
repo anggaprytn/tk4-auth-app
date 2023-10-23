@@ -1,13 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { setAuthTokens, setData } from '@/redux/_reducers/authSlice';
 import { store } from '@/redux/_store';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 export const useLoginScreen = () => {
-  const [visibleDialog, setVisibleDialog] = useState<boolean>(false);
-
-  const hideDialog = () => setVisibleDialog(false);
-
   const handleGoogleSignIn = useCallback(async () => {
     GoogleSignin.hasPlayServices()
       .then(async hasPlayService => {
@@ -30,7 +26,5 @@ export const useLoginScreen = () => {
 
   return {
     handleGoogleSignIn,
-    visibleDialog,
-    hideDialog,
   };
 };

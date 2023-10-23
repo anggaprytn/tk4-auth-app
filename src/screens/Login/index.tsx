@@ -9,24 +9,7 @@ import { defaultColors } from '@/themes';
 import { IconGoogle } from '@/assets/icons';
 
 const Login = () => {
-  const { handleGoogleSignIn, visibleDialog, hideDialog } = useLoginScreen();
-
-  const renderDialog = useMemo(() => {
-    return (
-      <Portal>
-        <Dialog visible={visibleDialog} onDismiss={hideDialog}>
-          <Dialog.Content>
-            <Text type="regular" size={18} color={defaultColors.text}>
-              Invalid password. Please try again.
-            </Text>
-          </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={hideDialog}>OK</Button>
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
-    );
-  }, [hideDialog, visibleDialog]);
+  const { handleGoogleSignIn } = useLoginScreen();
 
   const renderHeader = useMemo(() => {
     return (
@@ -58,16 +41,13 @@ const Login = () => {
   }, [handleGoogleSignIn]);
 
   return (
-    <>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <View style={styles.center}>
-          {renderHeader}
-          {renderBtnGoogle}
-        </View>
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <View style={styles.center}>
+        {renderHeader}
+        {renderBtnGoogle}
       </View>
-      {renderDialog}
-    </>
+    </View>
   );
 };
 
