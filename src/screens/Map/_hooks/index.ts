@@ -2,6 +2,7 @@ import { useRef, useCallback } from 'react';
 import MapView from 'react-native-maps';
 import { useFocusEffect } from '@react-navigation/native';
 import * as Location from 'expo-location';
+import { useSelector } from 'react-redux';
 
 const initialRegion = {
   latitude: -6.1753924,
@@ -43,8 +44,11 @@ export const useMap = () => {
     }, [fetchLocation]),
   );
 
+  const data = useSelector(({ authSlice }: any) => authSlice?.data);
+
   return {
     mapViewRef,
     initialRegion,
+    data,
   };
 };

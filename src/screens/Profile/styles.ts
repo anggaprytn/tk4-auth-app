@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import { defaultColors } from '@/themes';
 
 export const styles = StyleSheet.create({
@@ -23,4 +26,10 @@ export const styles = StyleSheet.create({
     width: wp(100) - 32,
   },
   mt8: { marginTop: 8 },
+  img: {
+    marginTop: hp(10),
+    width: wp(30),
+    height: wp(30),
+    borderRadius: wp(30 / 2),
+  },
 });

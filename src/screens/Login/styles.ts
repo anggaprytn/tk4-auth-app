@@ -24,25 +24,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  btn: {
-    marginTop: 16,
-    width: wp(100) - 32,
-    height: 50,
-    justifyContent: 'center',
-    backgroundColor: defaultColors.primary,
-    borderRadius: 99,
-    alignItems: 'center',
-  },
-  inputUser: {
-    width: wp(100) - 32,
-    marginTop: 16,
-  },
-  inputPassword: {
-    width: wp(100) - 32,
-    marginTop: 16,
-  },
   center: { alignItems: 'center' },
-  white: { color: 'white' },
   btnGoogle: {
     width: wp(100) - 32,
     height: 50,
@@ -53,6 +35,7 @@ export const styles = StyleSheet.create({
     borderRadius: 99,
     alignItems: 'center',
     flexDirection: 'row',
+    marginTop: 16,
   },
   containerIcon: {
     height: 45,
@@ -61,10 +44,4 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   centerr: { justifyContent: 'center', alignItems: 'center' },
-  divider: { width: wp(100) - 32, marginVertical: 32, height: 1 },
-  orText: {
-    position: 'absolute',
-    backgroundColor: 'white',
-    paddingHorizontal: 8,
-  },
 });

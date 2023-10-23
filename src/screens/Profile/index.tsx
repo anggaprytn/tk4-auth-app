@@ -6,10 +6,6 @@ import { store } from '@/redux/_store';
 import { useCallback, useMemo } from 'react';
 import { styles } from './styles';
 import React from 'react';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 import { Text, Pressable } from '@/components';
 import { defaultColors } from '@/themes';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -42,12 +38,7 @@ const Home = () => {
               ? { uri: data?.user?.photo }
               : require('@/assets/images/img_propic_default.webp')
           }
-          style={{
-            marginTop: hp(10),
-            width: wp(30),
-            height: wp(30),
-            borderRadius: wp(30 / 2),
-          }}
+          style={styles.img}
         />
         <Text
           type="medium"
