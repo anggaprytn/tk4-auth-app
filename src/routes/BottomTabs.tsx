@@ -24,6 +24,7 @@ const BottomTabNavigator: React.FC = () => {
         component={Map}
         options={{
           tabBarShowLabel: false,
+          headerShown: false,
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
             <TabBarIcon color={color} name="map" label="Map" />
@@ -34,6 +35,7 @@ const BottomTabNavigator: React.FC = () => {
         name="Profile"
         component={Profile}
         options={{
+          headerShown: false,
           tabBarShowLabel: false,
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (

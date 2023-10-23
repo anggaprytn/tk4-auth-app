@@ -1,16 +1,16 @@
-import React, { useMemo, useEffect, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Image, Alert } from 'react-native';
+import { View, Image } from 'react-native';
 import { Button, TextInput, Dialog, Portal, Divider } from 'react-native-paper';
 import { styles } from './styles';
 import { useLoginScreen } from './_hooks';
 import { Text, Pressable } from '@/components';
 import { defaultColors } from '@/themes';
 import { IconGoogle } from '@/assets/icons';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const Login = () => {
   const {
+    handleGoogleSignIn,
     isPasswordVisible,
     setIsPasswordVisible,
     setUser,
@@ -19,25 +19,6 @@ const Login = () => {
     hideDialog,
     handleLogin,
   } = useLoginScreen();
-
-  const handleGoogleSignIn = useCallback(async () => {
-    GoogleSignin.hasPlayServices()
-      .then(async hasPlayService => {
-        if (hasPlayService) {
-          GoogleSignin.signIn()
-            .then(userInfo => {
-              console.log(JSON.stringify(userInfo));
-              Alert.alert('Google Signin Success');
-            })
-            .catch(e => {
-              console.log('ERROR IS: ' + JSON.stringify(e));
-            });
-        }
-      })
-      .catch(error => {
-        console.log('ERROR IS 2: ' + JSON.stringify(error));
-      });
-  }, []);
 
   const renderDialog = useMemo(() => {
     return (

@@ -12,7 +12,6 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 GoogleSignin.configure({
   webClientId:
     '966450485349-28toacjfib1qr6b50fh3kkjnak0ir7a0.apps.googleusercontent.com',
-  scopes: ['https://www.googleapis.com/auth/drive'],
   offlineAccess: true,
   forceCodeForRefreshToken: true,
   profileImageSize: 120,

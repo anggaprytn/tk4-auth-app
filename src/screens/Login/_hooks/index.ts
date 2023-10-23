@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
-import { setAuthTokens } from '@/redux/_reducers/authSlice';
+import { setAuthTokens, setData } from '@/redux/_reducers/authSlice';
 import { store } from '@/redux/_store';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 export const useLoginScreen = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -15,7 +16,28 @@ export const useLoginScreen = () => {
     authSuccess ? store.dispatch(setAuthTokens()) : setVisibleDialog(true);
   }, [password, user]);
 
+  const handleGoogleSignIn = useCallback(async () => {
+    GoogleSignin.hasPlayServices()
+      .then(async hasPlayService => {
+        if (hasPlayService) {
+          GoogleSignin.signIn()
+            .then(userInfo => {
+              console.log(JSON.stringify(userInfo));
+              store.dispatch(setData(userInfo));
+              store.dispatch(setAuthTokens());
+            })
+            .catch(e => {
+              console.log('ERROR IS: ' + JSON.stringify(e));
+            });
+        }
+      })
+      .catch(error => {
+        console.log('ERROR IS 2: ' + JSON.stringify(error));
+      });
+  }, []);
+
   return {
+    handleGoogleSignIn,
     isPasswordVisible,
     setIsPasswordVisible,
     setUser,
