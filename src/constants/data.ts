@@ -47,3 +47,11 @@ export const theme = {
 export const settings = {
   rippleEffectEnabled: true,
 };
+
+export const googleConfig = {
+  webClientId:
+    '966450485349-28toacjfib1qr6b50fh3kkjnak0ir7a0.apps.googleusercontent.com',
+  offlineAccess: true,
+  forceCodeForRefreshToken: true,
+  profileImageSize: 120,
+};

@@ -1,3 +1,3 @@
-import { theme, settings } from './data';
+import { theme, settings, googleConfig } from './data';
 
-export { theme, settings };
+export { theme, settings, googleConfig };

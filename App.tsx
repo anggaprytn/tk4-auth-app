@@ -5,17 +5,11 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { PaperProvider } from 'react-native-paper';
 import { store, persistor } from '@/redux/_store';
-import { theme, settings } from '@/constants';
+import { theme, settings, googleConfig } from '@/constants';
 import { useFont } from '@/utils/hooks';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-GoogleSignin.configure({
-  webClientId:
-    '966450485349-28toacjfib1qr6b50fh3kkjnak0ir7a0.apps.googleusercontent.com',
-  offlineAccess: true,
-  forceCodeForRefreshToken: true,
-  profileImageSize: 120,
-});
+GoogleSignin.configure(googleConfig);
 
 const MainApp = () => {
   const { loaded, error } = useFont();
