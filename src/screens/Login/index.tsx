@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Image } from 'react-native';
-import { Button, Dialog, Portal } from 'react-native-paper';
 import { styles } from './styles';
 import { useLoginScreen } from './_hooks';
 import { Text, Pressable } from '@/components';
